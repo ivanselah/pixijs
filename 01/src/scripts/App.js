@@ -1,5 +1,6 @@
 import * as PIXI from "pixi.js";
 import { Loader } from "./Loader.js";
+import { MainScene } from "./MainScene.js";
 
 export class App {
   run() {
@@ -17,5 +18,10 @@ export class App {
   }
   start() {
     console.log("The game stated");
+    this.scene = new MainScene();
+    // 이 컨테이너를 메인 시스템 컨테이너에 추가하면
+    // 컨테이너가 사용되어 짐
+    this.app.stage.addChild(this.scene.container);
+    console.log(this.app);
   }
 }
